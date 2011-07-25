@@ -1,12 +1,11 @@
-#include <stdio.h>
-#define HOW_MANY_TIMES_TO_SAY_HELLO 10000
-
-int main(int argc, const *argvc[])
+#define HOW_MANY_TIMES_TO_SAY_HELLO 3
+#include<stdio.h>
+void say_three_hi()
 {
-       int i;
-       for (i=0;i<HOW_MANY_TIMES_TO_SAY_HELLO;i++)
-       { 
-             printf("hello world!\n");           
-       }
-       return  0;
+    int j;
+    for (j = 0;j<HOW_MANY_TIMES_TO_SAY_HELLO; j++)
+    {
+        printf("hello everyone!\n");
+    }
 }
+
