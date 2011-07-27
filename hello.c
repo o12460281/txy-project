@@ -1,11 +1,25 @@
-#define HOW_MANY_TIMES_TO_SAY_HELLO 3
-#include<stdio.h>
-void say_three_hi()
-{
-    int j;
-    for (j = 0;j<HOW_MANY_TIMES_TO_SAY_HELLO; j++)
-    {
-        printf("hello everyone!\n");
-    }
-}
 
+#function
+      hello.h
+        #include <stdio.h>
+        void say_three_hi();
+
+      main.c
+        #include <stdio.h>
+ 
+        int main(int argc, char const* argv[])
+        {      
+            say_three_hi();    
+            return 0;
+        }
+  
+      hello.c
+        #include "hello.h"
+        void say_three_hi()
+            {
+                int i;
+                for (i = 0; i < 3; i++)
+                {
+                    printf("hello everyone!\n");
+                }
+            }
