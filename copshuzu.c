@@ -43,7 +43,7 @@ int main(int argc, char const* argv[])
     printf("%s\n",my);
     return 0;
 }*/
-int where(char x,char *p)//char str[int y])
+/*Is wround  int where(char x,char *p)//char str[int y])
 {
     int j=1;
 
@@ -70,5 +70,25 @@ int main(int argc, char const* argv[])
     c = where(b,aaa);
     printf("lacation is:%d\n",c);
     printf("aaa[%d]\n",c);
+    return 0;
+}*/
+int main(int argc, char const* argv[])
+{
+    char str[]="julywoaini!";
+    char *ptr=str;
+    int a=1;
+    char b;
+    printf("intput word:\n");
+    scanf("%c",&b);
+    while(*ptr != '\0')
+    {
+        if (*ptr++ == b) {
+            printf("str[%d]   ",a);
+        }
+        a++;
+        
+    }
+
+    printf("\n");
     return 0;
 }
