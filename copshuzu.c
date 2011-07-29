@@ -1,6 +1,9 @@
 #include <stdio.h>
 #define N 10
-/*int main(int argc, char const* argv[])
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#if 0
+int main(int argc, char const* argv[])
 {
     char aaa[]="julywoaini!";
     char bbb[20];
@@ -17,8 +20,12 @@
    // while(b=='\0')
     printf("%s\n",bbb);
     return 0;
-}*/
-/*char *cope_array(char *x,char *y)   //just look as native type
+}
+#endif
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+#if 0
+char *cope_array(char *x,char *y)   //just look as native type
 {
     char *m = x;
    //(1) while(*y!='\0')
@@ -42,8 +49,12 @@ int main(int argc, char const* argv[])
     cope_array(my,str);
     printf("%s\n",my);
     return 0;
-}*/
-/*Is wround  int where(char x,char *p)//char str[int y])
+}
+#endif
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+#if 0
+Is wround  int where(char x,char *p)//char str[int y])
 {
     int j=1;
 
@@ -71,7 +82,10 @@ int main(int argc, char const* argv[])
     printf("lacation is:%d\n",c);
     printf("aaa[%d]\n",c);
     return 0;
-}*/
+}
+#endif
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 int main(int argc, char const* argv[])
 {
     char str[]="julywoaini!";
