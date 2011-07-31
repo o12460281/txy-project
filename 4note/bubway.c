@@ -53,7 +53,7 @@ void init_fun(int *p,int n)         //random array[]
     }
    // return m;
 }
-void run_fun(int *p,int n)
+/*void run_fun(int *p,int n)
 {
    // int *m = p;
     int temp;
@@ -66,7 +66,7 @@ void run_fun(int *p,int n)
                 k=j;
             }
         }
-        if (i != k) {       //*(p+i)==p[i]
+        if (i != k) {      //(p+i)==p[i]
             temp = p[i];
             p[i] = p[k];
             p[k] = temp;
@@ -74,6 +74,36 @@ void run_fun(int *p,int n)
         
     }
       //  return m;
+}*/
+void fast_sort(int *p, int x, int y)
+{
+    int i = x;
+    int j = y;
+    int mid = p[(i+j)/2];
+    int temp = 0;
+    do
+    {
+    while ((p[i]<mid)  && (i<=y)) i++;
+    while ((p[j]>mid)  && (j>=x)) j--;
+
+    if (i <=j ) {
+        temp=p[i];
+        p[i]=p[j];
+        p[j]=temp;
+        i++;
+        j--;
+    } 
+    }
+     while (i <= j)
+    {
+        if (x<j) {
+            fast_sort(p,x,j);
+        }
+        if (i<y) {
+            fast_sort(p,y,i);
+        }
+    }
+    
 }
 
 //void init
@@ -85,8 +115,9 @@ int main(int argc, char const* argv[])
     difi_fun(array,N);
     printf("press Enter to start");
     getchar();
-    run_fun(array,N);
-    difi_fun(array,N);
+    fast_sort(array,N);
+ //   run_fun(array,N);
+    difi_fun(array,0,N-1);
    /* for (i = 0; i < N; i++) {
         printf("%-3d",array[i]);
     }*/
