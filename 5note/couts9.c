@@ -97,14 +97,15 @@ void delete_sameword(int *p , int n)
         }
     }
 }
-/*    if (n==1) {
-      print_array(p,20);
+/*   if (n==1) {
+     print2_array(p,20);
+     return;
     }
     for (i = 0; i < n; i++)
     {
-        if (p[n-1]==p[i])
+        if (p[n-2]==p[i])
         {
-             p[n-1]=1111;
+             p[n-2]=-1;
              delete_sameword(p,n-1);
         }
     }
@@ -117,6 +118,7 @@ int main(int argc, char const* argv[])
     int array[20];
     init_array(array,20);
     print_array(array,20);
+    getchar();
     delete_sameword(array,20);
     print2_array(array,20);
     printf("\n");
