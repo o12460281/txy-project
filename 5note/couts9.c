@@ -81,7 +81,7 @@ void print2_array(int *p,int n)
         }
     }
 }
-void delete_sameword(int *p , int n)
+int *delete_sameword(int *p , int n)
 {
     for (i = 0; i < n-1; i++)
     {
@@ -97,29 +97,30 @@ void delete_sameword(int *p , int n)
         }
     }
 }
-/*   if (n==1) {
-     print2_array(p,20);
-     return;
+ /*  if (n==1) {
+     return p; 
     }
-    for (i = 0; i < n; i++)
+    for (i = 0; i < n-1; i++)
     {
-        if (p[n-2]==p[i])
+        if (p[n-1]==p[i])
         {
-             p[n-2]=-1;
+             p[n-1]=-1;
              delete_sameword(p,n-1);
         }
     }
-             delete_sameword(p,n-1);
+    delete_sameword(p,n-1);
     
 }*/
 
 int main(int argc, char const* argv[])
 {
     int array[20];
-    init_array(array,20);
-    print_array(array,20);
+    int *p;
+    p = &array[0];
+    init_array(p,20);
+    print_array(p,20);
     getchar();
-    delete_sameword(array,20);
+    p = delete_sameword(p,20);
     print2_array(array,20);
     printf("\n");
     return 0;

@@ -1,3 +1,11 @@
+/*
+   A fully link mantion 
+   creat add delate  judged selution
+   add one node thinkint about
+   there  linkself' location
+   no just  head  middle  last
+                                */
+                                
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -56,6 +64,11 @@ int tongjijiedianshu(STU *p)
 
 void print_link(STU *p)
 {
+    if (NULL == p)
+    {
+       printf("empty\n");
+       return;
+    }
     while(p != NULL)
     {
          printf("%-5d %s\n", p->number,p->name);
@@ -77,6 +90,10 @@ STU *add_link(STU *p)
     printf("intput name:\n");
     scanf("%s",p_1->name);
     p_1->next = NULL;
+    if (p == NULL)
+    {
+        return p_1;
+    }
     if (p_1->number < p->number)
     {
         p_1->next = p;
@@ -90,8 +107,6 @@ STU *add_link(STU *p)
         }
         p = p->next;
     }
-   // p_1 = p->next;
-   // p_1->next = p->next;
     p_1->next = p->next;
     p->next = p_1;
     return head;
@@ -102,6 +117,11 @@ STU *delate_link(STU *p)
     STU *head = p;
     STU *temp = NULL;
     int number=0;
+    if (NULL == p)
+    {
+        printf("empty\n");
+        return NULL;
+    }
     printf("please input a number to delate:\n");
     scanf("%d",&number);
     if (number < p->number)
@@ -130,45 +150,11 @@ STU *delate_link(STU *p)
     temp = p->next;
     p->next = p->next->next;
     free(temp);
-
-/*    STU *p_d = NULL;
-    p_d = malloc(sizeof(STU));
-    if (p_d == NULL)
-    {
-        perror("delate");
-        exit(0);
-    }
-    printf("input number:\n");
-    scanf("%d",&p_d->number);
-    p_d->next = NULL;
-    if (p_d->number < p->number)
-    {
-        printf("NO found this number!!\n");
-        return head;
-    }
-    if (p_d->number == p->number) 
-    {
-        return p->next;
-        free(p);
-    }
-    while(p->next != NULL)
-    {
-        if (p->next->number == p_d->number)
-        {
-            free(p->next);
-            break;
-        }
-        p = p->next;
-    }*/
-   // p->next->next = p->next;
-  // p->next = p->next->next;       //point out is defferent
     return head;
 }
 int main(void)
 {
     int couter;
-   // srand(time(NULL));
-   // n = rand()%20;
     STU *head = NULL;
     head = create_link(10);
     couter = tongjijiedianshu(head);
@@ -184,4 +170,3 @@ int main(void)
     printf("total link:%d\n",couter);
     return 0;
 }
-
