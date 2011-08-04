@@ -8,7 +8,6 @@
 struct yuseful
 {
     int number;
-    int consts;
     struct yuseful *next;
 };
 typedef struct yuseful YU;
@@ -46,8 +45,7 @@ YU *init_link(int n)
 }
 void yuseful(YU *p_f)
 {
-    YU *p = NULL;
-    p_f->next = p;
+    YU *p = p_f->next;
     int couter = 0;
     int interval = 4;
     while(p != p->next)
@@ -55,27 +53,29 @@ void yuseful(YU *p_f)
         couter++;
         if(couter == interval)
         {
-            printf("%dout\n",p->number);
+            printf("%-4dout\n",p->number);
             couter = 0;
-            free(p);
             p_f->next = p->next;
+            free(p);
             p = p_f->next;
         }
         else
         {
-            printf("%d\n",p->number);
+            printf("%-4d",p->number);
             p = p->next;
-            p_f->next =p;
+            p_f = p_f->next;
         }
     }
-    
+    printf("letf :%d\n",p_f->number);   
 }
    
 
 int main(int argc, const char* argv[])
 {
-    YU *head=NULL;
     YU *rear=NULL;
+    int n;
+    printf("input a number\n");
+    scanf("%d",&n);
     rear = init_link(n);
     yuseful(rear);
     return 0;
