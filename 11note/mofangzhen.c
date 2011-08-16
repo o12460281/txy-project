@@ -1,4 +1,4 @@
-#include <stdio.h> 
+/*#include <stdio.h> 
 int main()
 { 
     int n; 
@@ -34,7 +34,7 @@ int main()
         }
     }
     return 0;
-}
+}*/
 /*
 我结合   whq263(玄豹）和jixingzhong(瞌睡虫)   做了只有奇数的。偶数的做不出来。
 
@@ -100,3 +100,18 @@ void   main()
               }
 } 
 */
+#include <stdio.h>
+int main(int argc, const char* argv[])
+{
+    int array[7][7];
+    int i,j,k,m;
+    i=1;j = (7/2);
+    a[i][j]=1;
+    k = i;
+    m = j;
+    for (i = 2; i <= 49; i++)
+    {
+        
+    }
+    return 0;
+}

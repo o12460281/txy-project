@@ -115,6 +115,58 @@ void save_node(STU *head)
     }
     fclose(fp);
 }
+/*void read_file(void)
+{
+    FILE *fp = fopen("1.txt","r+");
+    char a_str[1023]={0};
+    int i = 0;
+    while((a_str[i]=getc(fp)) != EOF)
+    {
+        i++;
+    }
+    a_str[i]='\n';
+    printf("%s\n",a_str);
+    fclose(fp);
+}*/
+
+STU *read_file()
+{
+    STU *head = NULL;
+    STU *p = NULL;
+    FILE *fp = NULL;
+    fp = fopen("1.txt","r+");
+    int inum = 0;
+    char iname[10]={0};
+    head = p = malloc(sizeof(STU));
+    if (NULL == head)
+    {
+        perror("malloc");
+        exit(0);
+    }
+    if (fscanf(fp,"%d%s",&inum,iname) != EOF)
+    {
+        head->number = inum;
+        strncpy(head->name,iname,9);
+    }
+    head->next = NULL;
+
+    while(fscanf(fp,"%d%s",&inum,iname) != EOF)
+    {
+        p->next = malloc(sizeof(STU));
+        if (NULL == p->next)
+        {
+            perror("malloc");
+            exit(0);
+        }
+        p->next->number = inum;
+        strncpy(p->next->name,iname,9);
+
+        //read
+        p->next->next = NULL;
+        p = p->next;
+    }
+    return head;
+}
 void menu(void)
 {
     printf("Please choice:\n");
@@ -130,6 +182,7 @@ int main(int argc, const char* argv[])
     char choice = 0;
     int flag;
     //read from file
+    head = read_file();
     while(flag)
     {
        menu();
@@ -141,6 +194,8 @@ int main(int argc, const char* argv[])
             case '2' : head = delate_node(head);break;
             case '3' : show_link(head);break;
             case '4' : save_node(head);break;
+           // case '5' : head = read_file(head);
+            //case '5' : read_file();break;
             case '5' : flag = 0;break;
             default : printf("sorry no this choice~\n"); break;
         }
