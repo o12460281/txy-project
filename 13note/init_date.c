@@ -13,12 +13,15 @@ filesys->usr->include->(sys(ioctl.h)||linux(fb.h))
 #include <sys/mman.h>
 #include <string.h>
 #include "func.h"
-fbscr_t fb_v;	
+mouse_event m_e;
+fbscr_t fb_v;
+int mx;
+int my;
 void init_date(void)
 {
 	int fd = 0;
 	struct fb_var_screeninfo fb_var;
-	fd = open("/dev/fb0",O_RDWR);
+	fd = open("/dev/fb0",O_RDWR);//以可读可写的方式打开/dev/fb0文件，并返回一个整型的指针用来操作文件中到内容
 	if (fd < 0)
 	{
 		perror("dev fb0");
