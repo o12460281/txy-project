@@ -5,6 +5,7 @@
 int main(int argc, const char* argv[])
 {
 	init_date();
+	print_board();
 	mouse_doing();
 /*	drew_cursor(512,359);
 	sleep(1);

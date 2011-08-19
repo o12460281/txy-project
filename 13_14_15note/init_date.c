@@ -13,8 +13,13 @@ filesys->usr->include->(sys(ioctl.h)||linux(fb.h))
 #include <sys/mman.h>
 #include <string.h>
 #include "func.h"
+#include "variable.h"
 mouse_event m_e;
+
 fbscr_t fb_v;
+u32_t current_color;
+char chess_board[X_NUM*Y_NUM];
+char player;
 int mx;
 int my;
 void init_date(void)
@@ -45,6 +50,9 @@ void init_date(void)
 //	int i = 0;
 //	u32_t *p = fb_v.memo;
 	memset(fb_v.memo,0,fb_v.w*fb_v.h*fb_v.bpp/8);
+	memset(chess_board,0,X_NUM*Y_NUM);
+	current_color = BLACK;
+	player = 1;
 /*	for (i = 0; i < fb_v.h; i++)
 	{
 		p[fb_v.w*i+i]=0x00ff0000;
