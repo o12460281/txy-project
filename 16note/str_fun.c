@@ -14,6 +14,7 @@ int main(int argc, const char* argv[])
 	for (i = 0; i < 6; i++)
 	{
 		printf("%s ",p[i]);
+		printf("%d  ",strlen(p[i]));
 	}
 	printf("\n");
 
